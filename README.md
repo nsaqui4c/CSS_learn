@@ -87,7 +87,7 @@ visibility: hidden and display:none
 
 	if visibility is hidden, the space taken by the element will remain taken while in display the space of element will taken by the next element
 
-What are inline and block level element?
+#### What are inline and block level element?
 ```
 You can read a more detailed article (which also includes a YouTube video about HTML at the top of the page) here: https://academind.com/learn/html/beginner-s-guide/diving-deeper-into-html#block-level-vs-inline-elements
 
@@ -108,12 +108,30 @@ Logically, this makes sense since you don't want your inline elements to destroy
 Some example elements are: <a> , <span> , <img> 
 
 ```
-##pseudo classes:
+## Pseudo classes and elements:
+
+Pseudo Classes on the MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+
+Dive deeper into Pseudo Elements: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+
+pseudo class defines the style of a special state of an element
+```
+### :className
 
 .class:hover{
 color:white}
 
 	there shold be no spacing before and after ':'
+```	
+Pseudo Element defines teh style of a specific part of an element	
+```
+### ::elementName
+
+.class::first-letter{
+font-size:32px
+}
+
+```
 
 
 ## Types of combinator:
