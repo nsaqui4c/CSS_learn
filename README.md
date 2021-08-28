@@ -1,4 +1,7 @@
 # CSS_learn
+
+caniuse.com
+
 CSS:
 	cascading style sheet
 	
@@ -26,6 +29,13 @@ We can also use google fonts.
 		add link to head section of page
 		customize font-family for the selector
 		
+
+
+FLOAT:
+	float:right|left|
+	Float actually take the element out of the document flow. The space of the element will not be reserved. block level element will take its space and inline element from below element which takes its place will wrap around it
+
+	clear: both; // to clear both left and right float
 
 Selectors:
 
@@ -70,7 +80,11 @@ box-sizing:
 	
 	box-sizing:content-box|border-box
 
-
+viewport:
+	
+	the visible part/area of your page. Or your browser window
+	
+	
 ### Display:
 defines the alignement of content
 ```
@@ -88,6 +102,10 @@ visibility: hidden and display:none
 	if visibility is hidden, the space taken by the element will remain taken while in display the space of element will taken by the next element
 
 #### What are inline and block level element?
+
+Inline -> <a> , <span> , <img> 
+block -> <div> , <section> , <article> , <nav>  but also <h1> , <h2>  etc and <p>
+
 ```
 You can read a more detailed article (which also includes a YouTube video about HTML at the top of the page) here: https://academind.com/learn/html/beginner-s-guide/diving-deeper-into-html#block-level-vs-inline-elements
 
@@ -133,6 +151,16 @@ font-size:32px
 
 ```
 
+### !important
+
+border:1px solid black !important
+
+the style with important marked will have the highest specifity
+
+### :not pseudo class
+
+a:not(.active){ select anchor without active class}
+:not(p){rules will applied to everyehere except p}
 
 ## Types of combinator:
 
@@ -196,25 +224,70 @@ div  p{color:red}
 </div>
 
 ```
-
+**Extra
+a.active -> anchor tag whcih have active class
 
 Cascading style sheet and specificity
 Cascading- > Multiple rule can be apply on same element and rule with higher specificity will cascade other rule
+
+
+*******************************************
+## Positioning
+
+static -> default
+
+absolute: 
+	* takes the element out of the document flow
+	* position context will be html if no parent has any positon defined
+	* If any parent has position defined, than that parent will be the position context
+
+relative:
+	* element is not taken out of document flow
+	* defining the top and left in the element it will move in context to its own postion in document
+	
+	**overflow:hidden
+		defining this property in parent and then giving child relative property will make child invisible if we postion if out of parent area
+		
+	** Defing overflow:hidden in body will simply pass the property of html and save for itself. Define overflow property to html also, then it will not pass on to html from body
+	
+
+fixed : 
+	* takes the element out of document flow
+	* change the display to inline-block
+	* positioning context will be viewport
+	
+	//for navigation bar
+	{
+	position:fixed,
+	width:100%,
+	top:0
+	left:0
+	margin:0
+	box-sizing:border-box
+	}
+	
+
+sticky
+
 
 *******************************************
 
 Specificity in desceasing order:
 
-Indeveloper tool poperty are shown with decreasin specificity.
+In developer tool poperty are shown with decreasing specificity.
+
+
 
 The last ones in darker background are browser default
+
+In case element of same spcecifity is present, the one which come later in css file will win
+
+Even if we inline specify two classes, the class which is written in css file will win.
 ```
 Inline
 combinator
 ID
-class
-:psedo-class
-attribute
+class :psedo-class attribute
 <tag> and :pseudo-element-selector
 
 ```
@@ -236,19 +309,21 @@ background:
 color:
 
 display:
-vertical-align:middle
+vertical-align:middle|top
 overflow:
 order:
-text-align:right
+text-align:right    (for inline content)  (float or flex or grid for block element)
 text-decoration:none
 font-family:
 font-weight:bold
 font-size:22px
 width:calc(100% - 54px)
-list-style:none     (remove bullets pint from list)
+list-style:none     (remove bullets point from list)
 background:url()
 transform:scale()
+z-index:-1      (work only with element with position !static)
 border:2px soloid|dashed red
 box-sizing: content-box|border-box
+.button:focus {outline:none}    (to remove outline)
 
 ```
