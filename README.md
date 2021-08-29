@@ -102,11 +102,12 @@ visibility: hidden and display:none
 	if visibility is hidden, the space taken by the element will remain taken while in display the space of element will taken by the next element
 
 #### What are inline and block level element?
-
+```html
 Inline -> <a> , <span> , <img> 
 block -> <div> , <section> , <article> , <nav>  but also <h1> , <h2>  etc and <p>
-
 ```
+
+```html
 You can read a more detailed article (which also includes a YouTube video about HTML at the top of the page) here: https://academind.com/learn/html/beginner-s-guide/diving-deeper-into-html#block-level-vs-inline-elements
 
 Here's the executive summary:
@@ -248,7 +249,8 @@ relative:
 	**overflow:hidden
 		defining this property in parent and then giving child relative property will make child invisible if we postion if out of parent area
 		
-	** Defing overflow:hidden in body will simply pass the property of html and save for itself. Define overflow property to html also, then it will not pass on to html from body
+	** Defing overflow:hidden in body will simply pass the property of html and save for itself. 
+	** Define overflow property to html also, then it will not pass on to html from body
 	
 
 fixed : 
@@ -267,7 +269,16 @@ fixed :
 	}
 	
 
-sticky
+sticky:
+	* combination of fixed and relative
+	* element will remain fixed wrt viewport if we scroll 
+	
+	{
+	position:sticky,
+	top:20;
+	}
+	
+	* as soon we scroll down and element is at 20 px from top, it will stuck there until parent element is moved up.
 
 
 *******************************************
