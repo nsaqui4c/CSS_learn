@@ -235,15 +235,19 @@ Cascading- > Multiple rule can be apply on same element and rule with higher spe
 *******************************************
 ## Positioning
 
-static -> default. positionin top or other doesnot work here
+static -> 
 
-absolute: 
+	*default. 
+	*Positionin top or other doesnot work here
+	*z-index does not work
+
+absolute: other element(html or parent)
 
 	* takes the element out of the document flow
 	* position context will be html if no parent has any positon defined
 	* If any parent has position defined, than that parent will be the position context
 
-relative:
+relative: itself
 
 	* element is not taken out of document flow
 	* defining the top and left in the element it will move in context to its own postion in document
@@ -255,7 +259,7 @@ relative:
 	** Define overflow property to html also, then it will not pass on to html from body
 	
 
-fixed : 
+fixed : viewport
 
 	* takes the element out of document flow
 	* change the display to inline-block
@@ -272,9 +276,9 @@ fixed :
 	}
 	
 
-sticky:
+sticky: viewport and parent
 
-	* combination of fixed and relative
+	* combination of fixed and absolute
 	* element will remain fixed wrt viewport if we scroll 
 	
 	{
@@ -283,6 +287,82 @@ sticky:
 	}
 	
 	* as soon we scroll down and element is at 20 px from top, it will stuck there until parent element is moved up.
+	
+Stacking context:
+	
+	* if we have two parent, parent-1 has z-index:1 and parent-2 z-index:30, 
+	  then no matter how much z-index we give to children of parent-1, they will never
+	  be above parent-2, because stacking context of children is of parent-1.
+
+
+*******************************************
+## Background and images
+
+We can stack multiple images on top of each, For eg: gradient with transparancy then image for effect.
+background is actuall a shorthand. We can use multiple option with background.
+such as:
+**background-image   : set one or more background images
+**backgrouns-color	 : ser background color
+**backgrouns-size	 : set background size
+**backgrouns-repeat	 : set background images repeatation
+**backgrouns-clip	 : define whether background extends underneath border
+**backgrouns-attachment: set scrolling behavior of background image
+**backgrouns-origin	 : set background positioning area
+**backgrouns-position: set initial position relative to background position layer
+
+```
+background-image:url()
+background-image:linear-gradient(to left bottom, red blue)|linear-gradient(30 deg, red 70% ,blue, green)
+background-image:radial-gradient(circle at top left 30% 20% ,red,blue,green)
+background-color:red
+background-size:100px|100%|width height|100% 50%
+background-size:cover   ->adjust dimensin automatically, crop image if needed
+background-size:contain ->make sure to show full image, no croppig, even if white space is left
+background-repeat:no-repeat|repeat-x|repeat-y
+background-position:left top right bottom|0% 0% ->no cropping at left and top| 50% 50% ->equal cropping from all side
+background-origin:border-box|content-box|padding-box
+background-clip:border-box|content-box|padding-box
+background-attachment:local|scroll|fixed
+```
+
+We can add filter to our background images:
+```
+/* URL to SVG filter */
+filter: url("filters.svg#filter-id");
+
+/* <filter-function> values */
+filter: blur(5px);
+filter: brightness(0.4);
+filter: contrast(200%);
+filter: drop-shadow(16px 16px 20px blue);
+filter: grayscale(50%);
+filter: hue-rotate(90deg);
+filter: invert(75%);
+filter: opacity(25%);
+filter: saturate(30%);
+filter: sepia(60%);
+
+/* Multiple filters */
+filter: contrast(175%) brightness(3%);
+
+/* Use no filter */
+filter: none;
+
+/* Global values */
+filter: inherit;
+filter: initial;
+filter: revert;
+filter: unset;
+```
+
+### Images:
+
+* Images by default does not fix there size according to parent element
+* We need to make parent element block or inline block and then make 100% to contain them in parent
+
+
+
+
 
 
 *******************************************
