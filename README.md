@@ -152,13 +152,13 @@ font-size:32px
 
 ```
 
-### !important
+###   !important
 
 border:1px solid black !important
 
 the style with important marked will have the highest specifity
 
-### :not pseudo class
+###   :not pseudo class
 
 a:not(.active){ select anchor without active class}
 :not(p){rules will applied to everyehere except p}
@@ -235,14 +235,16 @@ Cascading- > Multiple rule can be apply on same element and rule with higher spe
 *******************************************
 ## Positioning
 
-static -> default
+static -> default. positionin top or other doesnot work here
 
 absolute: 
+
 	* takes the element out of the document flow
 	* position context will be html if no parent has any positon defined
 	* If any parent has position defined, than that parent will be the position context
 
 relative:
+
 	* element is not taken out of document flow
 	* defining the top and left in the element it will move in context to its own postion in document
 	
@@ -254,6 +256,7 @@ relative:
 	
 
 fixed : 
+
 	* takes the element out of document flow
 	* change the display to inline-block
 	* positioning context will be viewport
@@ -270,6 +273,7 @@ fixed :
 	
 
 sticky:
+
 	* combination of fixed and relative
 	* element will remain fixed wrt viewport if we scroll 
 	
