@@ -365,17 +365,18 @@ filter: unset;
 ## Size, measurement and unit
 
 Units:
-	* pixel		: px				-> Absolute (user settting doesn't affect it)
-	* rem		: root em			-> Adjust to default font-size relative to browser setting
-	* em		: em				-> Adjust to default font-size relattive to parent font
-	* vh		: viewport height	-> Adjust to current viewport
-	* vw		: viewport width	->
-	* vmin		:					-> min of height or width whichever is less
-	* vmax		:					-> max of height or width whichever is more
-	* percentage: %					-> position:fixed	-> relative to viewport
-									   position:absolute-> relative to parent+padding with postion != static
-									   position:relative-> relative to block level parent (no padding)
-									   position:static-> relative to block level parent (no padding
+
+* pixel		: px				-> Absolute (user settting doesn't affect it)
+* rem		: root em			-> Adjust to default font-size relative to browser setting
+* em		: em				-> Adjust to default font-size relattive to parent font
+* vh		: viewport height	-> Adjust to current viewport
+* vw		: viewport width	->
+* vmin		:					-> min of height or width whichever is less
+* vmax		:					-> max of height or width whichever is more
+* percentage: %					-> position:fixed	-> relative to viewport \n
+								   position:absolute-> relative to parent+padding with postion != static \n
+								   position:relative-> relative to block level parent (no padding) \n
+								   position:static-> relative to block level parent (no padding \n
 
 * If height if of body is not defined, than its direct child element will not be able to inherit the height.
   Therefore to resolve this, we need to define height in body as well as in html.
