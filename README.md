@@ -301,14 +301,14 @@ Stacking context:
 We can stack multiple images on top of each, For eg: gradient with transparancy then image for effect.
 background is actuall a shorthand. We can use multiple option with background.
 such as:
-**background-image   : set one or more background images
-**backgrouns-color	 : ser background color
-**backgrouns-size	 : set background size
-**backgrouns-repeat	 : set background images repeatation
-**backgrouns-clip	 : define whether background extends underneath border
-**backgrouns-attachment: set scrolling behavior of background image
-**backgrouns-origin	 : set background positioning area
-**backgrouns-position: set initial position relative to background position layer
+* background-image   : set one or more background images
+* backgrouns-color	 : ser background color
+* backgrouns-size	 : set background size
+* backgrouns-repeat	 : set background images repeatation
+* backgrouns-clip	 : define whether background extends underneath border
+* backgrouns-attachment: set scrolling behavior of background image
+* backgrouns-origin	 : set background positioning area
+* backgrouns-position: set initial position relative to background position layer
 
 ```
 background-image:url()
@@ -361,8 +361,28 @@ filter: unset;
 * We need to make parent element block or inline block and then make 100% to contain them in parent
 
 
+*******************************************
+## Size, measurement and unit
 
+Units:
+	* pixel		: px				-> Absolute (user settting doesn't affect it)
+	* rem		: root em			-> Adjust to default font-size relative to browser setting
+	* em		: em				-> Adjust to default font-size relattive to parent font
+	* vh		: viewport height	-> Adjust to current viewport
+	* vw		: viewport width	->
+	* vmin		:					-> min of height or width whichever is less
+	* vmax		:					-> max of height or width whichever is more
+	* percentage: %					-> position:fixed	-> relative to viewport
+									   position:absolute-> relative to parent+padding with postion != static
+									   position:relative-> relative to block level parent (no padding)
+									   position:static-> relative to block level parent (no padding
 
+* If height if of body is not defined, than its direct child element will not be able to inherit the height.
+  Therefore to resolve this, we need to define height in body as well as in html.
+
+Fonts:
+	* by default font sizes are maintained by browser, unless we define the the size.
+	* If we define the size in pixel, them if we user increase the default font size in browser, it will not affect the text size
 
 
 *******************************************
@@ -406,6 +426,7 @@ color:
 display:
 vertical-align:middle|top
 overflow:
+overflow-x: hidden
 order:
 text-align:right    (for inline content)  (float or flex or grid for block element)
 text-decoration:none
