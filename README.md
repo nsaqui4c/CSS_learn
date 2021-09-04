@@ -47,6 +47,77 @@ universsal: *
 Attributes: [disabled]  //<button diabled></button> 
 ```
 
+Attribute Selector:    
+
+* Element with attribute: 
+```html
+[type] {
+	color:red
+	}
+	
+	<input type="text">
+
+```
+
+* Element with specific attribute value: 
+```html
+[type="email"] {
+	color:red
+	}
+	
+	<input type="email">
+
+```
+
+* Element with specific attribute value in list: 
+```html
+[lang~="en-us"] {
+	color:red
+	}
+<p lang="en-us en-gb">Hi</p>
+/* here list containe en-us and en-gb*/
+
+```
+* Element with specific attribute value prefix: 
+
+```html
+[href^="#"] {
+	color:red
+	}
+<a href="#all">Link</a>
+
+```
+* Element with specific attribute value suffix: 
+
+```html
+[href$=".de"] {
+	color:red
+	}
+<a href="ab.de">Link</a>
+
+``` 
+
+* Element with atleast one attribute value: 
+
+```html
+[src*="cdn"] {
+	color:red
+	}
+<img src="i.cdn.com">
+
+```
+
+* case insensitive: 
+
+```html
+[src*="cdn i"] {
+	color:red
+	}
+<img src="i.CDN.com">
+
+```
+
+
 Inheritance:
 	if we apply any style in body, then it will bubble down to all the element inside the body.
 	
@@ -382,8 +453,29 @@ Units:
   Therefore to resolve this, we need to define height in body as well as in html.
 
 Fonts:
-	* by default font sizes are maintained by browser, unless we define the the size.
-	* If we define the size in pixel, them if we user increase the default font size in browser, it will not affect the text size
+* by default font sizes are maintained by browser, unless we define the the size.
+* If we define the size in pixel, them if we user increase the default font size in browser, it will not affect the text size
+
+******************************************
+## Responsive design  
+
+* Hardware pixel -> A hardware pixel is an individual dot of light in the display. 
+* Software pixel -> Also called a CSS pixel in the web world, is a unit of measurement. The device manufacturer determines how many hardware pixels equals one software pixel, a concept known as the device pixel ratio.  
+
+Basically Inch is equal to 96 px, but mobiles have  higher pixel density and this rule does not work therefore they tweak it. This results in a website which are not responsive and give same design as shown in PC.  
+
+To overcome to this we neet to add viewport as scale rather then jsut pixel, so that device can adjust their 
+```html
+<meta name="viewport" content="width=devide-width, initail-scale=1.0">
+
+"viewport" 							-- property name
+content="width=device-width, 		-- defining to use device width instead of pixel 
+initail-scale=1.0",					-- initial zoom level
+maximum-scale=2.0,					-- maximun zoom level
+minimum-scale=0.5,					-- minimum zoom level
+user-scalebale=yes					-- user will able to change zoom
+
+```
 
 
 *******************************************
