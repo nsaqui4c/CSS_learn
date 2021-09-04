@@ -8,8 +8,8 @@ CSS:
 World Wide Web Consortium (W3C) CSS Working Groups:
 ``` https://www.w3.org/TR/tr-groups-all#tr_Cascading_Style_Sheets__CSS__Working_Group
 ```
-
-3 ways of styling
+**********************************************
+## 3 ways of styling
 
 ```
 Inline : <h1 style="background:red;"></h1>
@@ -31,13 +31,13 @@ We can also use google fonts.
 		
 
 
-FLOAT:
+## FLOAT:
 	float:right|left|
 	Float actually take the element out of the document flow. The space of the element will not be reserved. block level element will take its space and inline element from below element which takes its place will wrap around it
 
 	clear: both; // to clear both left and right float
-
-Selectors:
+***********************************************
+## Selectors:
 
 ```
 Elements: h1 p body html
@@ -117,8 +117,8 @@ Attribute Selector:
 
 ```
 
-
-Inheritance:
+******************************************
+## Inheritance:
 	if we apply any style in body, then it will bubble down to all the element inside the body.
 	
 	But the specificity is very low. Even the browser has greater specificity than inheritance
@@ -127,19 +127,8 @@ Inheritance:
 	```
 	font-family:inherit  
 	```
-	
-Combinator:
-```
-<section id='section'>
-	<h1> This is some Text</h1>
-</section>	
+********************************************	
 
-
-#section h1{
-	some styling
-	}
-	
-```
 
 Margin Collapsing:
 
@@ -235,6 +224,18 @@ a:not(.active){ select anchor without active class}
 :not(p){rules will applied to everyehere except p}
 
 ## Types of combinator:
+
+```html
+<section id='section'>
+	<h1> This is some Text</h1>
+</section>	
+
+
+#section h1{
+	some styling
+	}
+	
+```
 
 **Adjacent Sibling:
 Elements share the same Parents
@@ -435,18 +436,37 @@ filter: unset;
 *******************************************
 ## Fonts
 
-Generic Families | Font Families | Font Families
---- | --- | ---  
+Generic Families | Font Families | Font Families    
 Serif | Times new Roman | Georgia  
---- | --- | ---  
-sans-serif | Hevetica | Verdana 
---- | --- | ---   
+sans-serif | Hevetica | Verdana  
 cursive | Brush script | Mistral  
---- | --- | ---  
 monospace | Courier New | Lucida Bright  
---- | --- | ---  
-fantasy | |   
---- | --- | ---  
+fantasy | |  
+
+
+Two ways of importing fonts from google:  
+*  connecting with html <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+* importing in css @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+### Using local downloaded font:  
+```
+@font-face{
+	font-family: "anonPro";
+	src: url(../asset/anonPro.ttf);
+	font-diaplay:block|swap|fallback|optional  //helps to load custom fonts or fallback fonts
+}
+
+@font-face{
+	font-family: "anonPro";
+	src: url(../asset/anonPro-bold.ttf);
+	font-weight:700;
+}
+
+.para{
+	font-family:"anonPro";
+	font-weight:700
+}
+```
 
 ******************************************
 ## Size, measurement and unit
@@ -537,11 +557,21 @@ vertical-align:middle|top
 overflow:
 overflow-x: hidden
 order:
+
 text-align:right    (for inline content)  (float or flex or grid for block element)
-text-decoration:none
+text-decoration:none|underline|overline|line-through|line-through dotted red|line-through wavy test-shadow:5px 5px 2px gray (x y blurr color)
+font-diaplay:block|swap|fallback|optional  (helps to load custom fonts or fallback fonts)
 font-family:
 font-weight:bold
 font-size:22px
+font-variant:small-caps     (change everything to caps)
+font-stretch:condensed
+letter-spacing:5px
+white-space:nowrap|pre|pre-wrap|pre-line|normal 
+line-height:2|32px|200%  (using only number '2' we are dealing with relative to font-size)
+font:italic small-caps 700 1.2rem/2 "anonPro",sans-serif 
+	(style variant weight size/height family) size and family is complusory
+
 width:calc(100% - 54px)
 list-style:none     (remove bullets point from list)
 background:url()
