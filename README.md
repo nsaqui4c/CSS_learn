@@ -425,7 +425,7 @@ filter: initial;
 filter: revert;
 filter: unset;
 ```
-
+******************************************
 ### Images:
 
 * Images by default does not fix there size according to parent element
@@ -433,6 +433,22 @@ filter: unset;
 
 
 *******************************************
+## Fonts
+
+Generic Families | Font Families | Font Families
+--- | --- | ---  
+Serif | Times new Roman | Georgia  
+--- | --- | ---  
+sans-serif | Hevetica | Verdana 
+--- | --- | ---   
+cursive | Brush script | Mistral  
+--- | --- | ---  
+monospace | Courier New | Lucida Bright  
+--- | --- | ---  
+fantasy | |   
+--- | --- | ---  
+
+******************************************
 ## Size, measurement and unit
 
 Units:
