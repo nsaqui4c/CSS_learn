@@ -436,18 +436,14 @@ filter: unset;
 *******************************************
 ## Fonts
 
-Generic Families | Font Families | Font Families   
---- | --- | ---   
-Serif | Times new Roman | Georgia  
---- | --- | ---  
-sans-serif | Hevetica | Verdana  
---- | --- | ---  
-cursive | Brush script | Mistral  
---- | --- | ---  
-monospace | Courier New | Lucida Bright  
---- | --- | ---  
-fantasy | |  
---- | --- | ---  
+Generic Families | Font Families | Font Families |  
+--- 		| --- 				| --- 			|  
+Serif 		| Times new Roman 	| Georgia  		|
+sans-serif 	| Hevetica 			| Verdana 		| 
+cursive		| Brush script 		| Mistral  		|
+monospace 	| Courier New 		| Lucida Bright | 
+fantasy 	| 					|  
+
 
 
 Two ways of importing fonts from google:  
@@ -479,17 +475,19 @@ Two ways of importing fonts from google:
 
 Units:
 
-* pixel		: px				-> Absolute (user settting doesn't affect it)
-* rem		: root em			-> Adjust to default font-size relative to browser setting
-* em		: em				-> Adjust to default font-size relattive to parent font
-* vh		: viewport height	-> Adjust to current viewport
-* vw		: viewport width	->
-* vmin		:					-> min of height or width whichever is less
-* vmax		:					-> max of height or width whichever is more
-* percentage: %					-> position:fixed	-> relative to viewport  
-								   position:absolute-> relative to parent+padding with postion != static  
-								   position:relative-> relative to block level parent (no padding)  
-								   position:static-> relative to block level parent (no padding)  
+|unit | Symbol | Detail |  
+--- 		| --- 				| --- 			|  
+| pixel		| px				| Absolute (user settting doesn't affect it)					|
+| rem		| root em			| Adjust to default font-size relative to browser setting		|
+| em		| em				| Adjust to default font-size relattive to parent font			|
+| vh		| viewport height	| Adjust to current viewport									|
+| vw		| viewport width	|																|
+| vmin		|					| min of height or width whichever is less						|
+| vmax		|					| max of height or width whichever is more						|
+| percentage| %					| position:fixed	-> relative to viewport    
+								   position:absolute-> relative to parent+padding with postion != static    
+								   position:relative-> relative to block level parent (no padding)    
+								   position:static-> relative to block level parent (no padding)  |  
    
 * If height if of body is not defined, than its direct child element will not be able to inherit the height.
   Therefore to resolve this, we need to define height in body as well as in html.
@@ -552,7 +550,6 @@ justify-content: center | flex-start |flex-end
 align-content: center  
 align-items:stretch(default)| center | flex-start |flex-end  
 ```
-
 ### Propertes can be used on Flex Items:  
 ```
 order: 0(default)  //item with higher order will be at end  
