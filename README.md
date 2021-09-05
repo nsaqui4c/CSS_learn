@@ -430,7 +430,7 @@ filter: unset;
 ### Images:
 
 * Images by default does not fix there size according to parent element
-* We need to make parent element block or inline block and then make 100% to contain them in parent
+* We need to make parent element block or inline-block and then make 100% to contain them in parent
 
 
 *******************************************
@@ -532,22 +532,35 @@ user-scalebale=yes					-- user will able to change zoom
  flex-wrap:nowrap  
 
 
-Main and cross axis
+* Main and cross axis
+
+main axis (flex-dirextion:row)-> ROW -> starts (0,0) moves to (x,0)  
+cross axis(flex-dirextion:row)-> column -> starts (0,0) moves to (0,y)
+
+
+* align-items: if direction row -> give proper spaces in y axis  
+* justify-content: if direction row -> give proper spaces in x axis  
+* align-content: spaces between item center 
+
+******************************************* 
 ### Propertes can be used on Flex container:  
 ```
-flex-direction:row|column|row-reverse
-flex-wrap:wrap|nowrap|wrap-reverse
-flex-flow:
-justify-content:
-align-content:
-align-items:
+flex-direction:row|column|row-reverse  
+flex-wrap:wrap|nowrap|wrap-reverse  
+flex-flow:  
+justify-content: center | flex-start |flex-end  
+align-content: center  
+align-items:stretch(default)| center | flex-start |flex-end  
 ```
 
 ### Propertes can be used on Flex Items:  
 ```
-order:
-flex:
-align-self:
+order: 0(default)  //item with higher order will be at end  
+flex-grow:1        //allow to grow  item if extra space in parent. it 2 item has flex-grow space will be divided in the ratio  
+flex-shrink:1(default) // if all have same value all will shrink in same ratio. value 0 will not let shrink  
+flex-basis: 200px       // refers to width if direction is row otherwise height
+align-self: similar to align-item, but works only single item  
+flex:0 1 auto  (0->row direction shrink basis->auto(provided height or width) )
 ```
 *******************************************
 
@@ -611,7 +624,7 @@ width:calc(100% - 54px)
 list-style:none     (remove bullets point from list)
 background:url()
 transform:scale()
-z-index:-1      (work only with element with position !static)
+z-index:-1      (work only with element with position !static  or dispaly:flex)
 border:2px soloid|dashed red
 box-sizing: content-box|border-box
 .button:focus {outline:none}    (to remove outline)
