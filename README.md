@@ -484,10 +484,10 @@ Units:
 | vw		| viewport width	|																|
 | vmin		|					| min of height or width whichever is less						|
 | vmax		|					| max of height or width whichever is more						|
-| percentage| %					| position:fixed	-> relative to viewport    
-								  position:absolute-> relative to parent+padding with postion != static    
-								  position:relative-> relative to block level parent (no padding)    
-								  position:static-> relative to block level parent (no padding)  |  
+| percentage| %					|* position:fixed	-> relative to viewport
+* position:absolute-> relative to parent+padding with postion != static 
+* position:relative-> relative to block level parent (no padding)
+* position:static-> relative to block level parent (no padding)  |  
    
 * If height if of body is not defined, than its direct child element will not be able to inherit the height.
   Therefore to resolve this, we need to define height in body as well as in html.
