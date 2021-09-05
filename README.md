@@ -436,16 +436,22 @@ filter: unset;
 *******************************************
 ## Fonts
 
-Generic Families | Font Families | Font Families    
+Generic Families | Font Families | Font Families   
+--- | --- | ---   
 Serif | Times new Roman | Georgia  
+--- | --- | ---  
 sans-serif | Hevetica | Verdana  
+--- | --- | ---  
 cursive | Brush script | Mistral  
+--- | --- | ---  
 monospace | Courier New | Lucida Bright  
+--- | --- | ---  
 fantasy | |  
+--- | --- | ---  
 
 
 Two ways of importing fonts from google:  
-*  connecting with html <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+*  connecting with html  inside link tag  href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"
 * importing in css @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 ### Using local downloaded font:  
@@ -498,7 +504,7 @@ Fonts:
 * Hardware pixel -> A hardware pixel is an individual dot of light in the display. 
 * Software pixel -> Also called a CSS pixel in the web world, is a unit of measurement. The device manufacturer determines how many hardware pixels equals one software pixel, a concept known as the device pixel ratio.  
 
-Basically Inch is equal to 96 px, but mobiles have  higher pixel density and this rule does not work therefore they tweak it. This results in a website which are not responsive and give same design as shown in PC.  
+Basically Inch is equal to <b>96px</b>, but mobiles have  higher pixel density and this rule does not work therefore they tweak it. This results in a website which are not responsive and give same design as shown in PC.  
 
 To overcome to this we neet to add viewport as scale rather then jsut pixel, so that device can adjust their 
 ```html
@@ -514,6 +520,35 @@ user-scalebale=yes					-- user will able to change zoom
 ```
 
 
+*******************************************
+## Flebox
+
+* on parent set property display:flex	->	makes parent = Flex container -> children= Flex Items
+* we can use display:flex  or display:inline-flex to create Flex container
+
+### display:flex:
+* this will automatically add two properties:  
+ flex-direction: row  
+ flex-wrap:nowrap  
+
+
+Main and cross axis
+### Propertes can be used on Flex container:  
+```
+flex-direction:row|column|row-reverse
+flex-wrap:wrap|nowrap|wrap-reverse
+flex-flow:
+justify-content:
+align-content:
+align-items:
+```
+
+### Propertes can be used on Flex Items:  
+```
+order:
+flex:
+align-self:
+```
 *******************************************
 
 Specificity in desceasing order:
