@@ -484,7 +484,9 @@ Units:
 | vw		| viewport width	|																|
 | vmin		|					| min of height or width whichever is less						|
 | vmax		|					| max of height or width whichever is more						|
-| percentage| %					|* position:fixed	-> relative to viewport
+| percentage| %					| check below points for details
+
+* position:fixed	-> relative to viewport
 * position:absolute-> relative to parent+padding with postion != static 
 * position:relative-> relative to block level parent (no padding)
 * position:static-> relative to block level parent (no padding)  |  
