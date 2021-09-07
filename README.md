@@ -568,16 +568,16 @@ flex:0 1 auto  (0->row direction shrink basis->auto(provided height or width) )
 * By default grid create one column and multiple rows for direct children
 * By default elements are aligned column wise 
 * grid-template
-		* grid-template-columns -> create columns according to size provided
-		* grid-template-columns: repeat(4,25%) -> creating 4 column of equal width
-		* grid-template-columns: repeat(auto-fill,10rem) -> dynamically genearate columns
-		* grid-template-columns: repeat(auto-fit,10rem) -> genaerate col and align to center
-		* grid-template-rows -> create rows according to size provided		
-		* grid-template-rows:5rem minmax(10px 100px) - > create 2 rows 1 fix, another with min10px and max 100 height
-		* grid-template-rows: 3.5rem auto fit-content(8rem)
-				* fit-content(8rem)  // minimum 8 rem, groe accoding to content
-		* grid-template-area: let say we have defined 4 columns and 3 rows. now we can define grid area using below in container.
-				* grid-area: we can use define area template to place elements.
+	* grid-template-columns -> create columns according to size provided
+	* grid-template-columns: repeat(4,25%) -> creating 4 column of equal width
+	* grid-template-columns: repeat(auto-fill,10rem) -> dynamically genearate columns
+	* grid-template-columns: repeat(auto-fit,10rem) -> genaerate col and align to center
+	* grid-template-rows -> create rows according to size provided		
+	* grid-template-rows:5rem minmax(10px 100px) - > create 2 rows 1 fix, another with min10px and max 100 height
+	* grid-template-rows: 3.5rem auto fit-content(8rem)
+		* fit-content(8rem)  // minimum 8 rem, groe accoding to content
+	* grid-template-area: let say we have defined 4 columns and 3 rows. now we can define grid area using below in container.
+		* grid-area: we can use define area template to place elements.
 				
 
 ```html
@@ -612,12 +612,12 @@ flex:0 1 auto  (0->row direction shrink basis->auto(provided height or width) )
 * grid-gap: row column
 
 
-* grid-auto
-		* grid-auto-rows:auto(default)|12rem|minmax(12rem auto) -> grid auto generate rows if content are more than defines rows. We can set the height of these rows
-		* grid-auto-columns:5rem
-		* grid-auto-flow:row(default)|column|row dense -> create new row/column in case of new content
-				* If we define 3 column and 2 item has span of 2 then 3 column will be empty and next item will take 2 column of next row. grid-auto-flow:row dense helps to resolve this issue ans assign next available item in 3rd column.
-
+* grid-auto  
+	* grid-auto-rows:auto(default)|12rem|minmax(12rem auto) -> grid auto generate rows if content are more than defines rows. We can set the height of these rows  
+	* grid-auto-columns:5rem  
+	* grid-auto-flow:row(default)|column|row dense -> create new row/column in case of new content  
+		* If we define 3 column and 2 item has span of 2 then 3 column will be empty and next item will take 2 column of next row. grid-auto-flow:row dense helps to resolve this issue ans assign next available item in 3rd column.  
+ 
 
  
 ```
@@ -667,20 +667,20 @@ grid-area:row-start / column-start / row-end / column-end
 
 ### Positioning:
 
-* configure these setting in container to affect all items
-justify-items: stretch(default)|center|start|end  // start|end|center of the row x-axis  
-align-items: stretch(default)|center|start|end  // start|end|center of the column y-axis  
-justify-content: start(default)|center|end  // position the whole grid container x-axis  
-align-content: start(default)|center|end  // position the whole grid container y-axis  
+* configure these setting in container to affect all items  
+justify-items: stretch(default)|center|start|end  // start|end|center of the row x-axis    
+align-items: stretch(default)|center|start|end  // start|end|center of the column y-axis    
+justify-content: start(default)|center|end  // position the whole grid container x-axis    
+align-content: start(default)|center|end  // position the whole grid container y-axis    
 
-* configure these setting to child element to affect only the one child
-justify-self:stretch|center|start|end
-align-self:stretch|center|start|end
+* configure these setting to child element to affect only the one child  
+justify-self:stretch|center|start|end  
+align-self:stretch|center|start|end  
 
 ### Responsive
 
-We can use @media (max-width 40rem) to define new grid-template-areas for mobile devices.  
-We dont need to change anything else, as side bar has new row now and element are refering to side bar and therefore they will align accordingly
+We can use @media (max-width 40rem) to define new grid-template-areas for mobile devices.    
+We dont need to change anything else, as side bar has new row now and element are refering to side bar and therefore they will align accordingly  
 
 ```html
 .container {
@@ -694,8 +694,8 @@ We dont need to change anything else, as side bar has new row now and element ar
 } 
 ```
 
-* grid-template-columns: repeat(auto-fill,10rem) -> dynamically genearate columns, we do not need to specify the number of colums
-* grid-template-columns: repeat(auto-fit,10rem) -> genaerate col and align to center . If we have only 2 col generated it will align it to center and if 3 comes , it will align them accordingly
+* grid-template-columns: repeat(auto-fill,10rem) -> dynamically genearate columns, we do not need to specify the number of colums  
+* grid-template-columns: repeat(auto-fit,10rem) -> genaerate col and align to center . If we have only 2 col generated it will align it to center and if 3 comes , it will align them accordingly  
 ******************************************* 
 
 Specificity in desceasing order:
