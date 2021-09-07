@@ -223,85 +223,6 @@ the style with important marked will have the highest specifity
 a:not(.active){ select anchor without active class}
 :not(p){rules will applied to everyehere except p}
 
-## Types of combinator:
-
-```html
-<section id='section'>
-	<h1> This is some Text</h1>
-</section>	
-
-
-#section h1{
-	some styling
-	}
-	
-```
-
-**Adjacent Sibling:
-Elements share the same Parents
-Second element come immediately after first element
-```diff
-h2 + p{
-color:red}
-
-<div>
-	<h2>not applied</h2>
--	<p>Css applied</p>
-	<h3>not applied</h3>
-	<p>not applied</p>
-	<h2>not applied</h2>
--	<p>Css applied</p>
-```
-**General Sibling
-Element share the same element
-second element come after first element
-```diff
-h2 ~ p{color:red}
-
-	<h2>not applied</h2>
--	<p>Css applied</p>
-	<h3>not applied</h3>
-	<h2>not applied</h2>
--	<p>Css applied</p>
-```
-**Child
-Second element is direct child of first element
-
-```diff
-div > p{color:red}
-
-<div>
--	<p> Css applied</p>
-	<div>Not a applied</div>
-	<span>
-		<p>Not applied</p>
-	</span>
--	<p>Css applied</p>
-</div>
-
-```
-**Descendant
-
-All second element will get red color
-No matter whether they are direct or indirect child
-```diff
-div  p{color:red}
-
-<div>
--	<p> Css applied</p>
-	<div>Not a applied</div>
-	<span>
--		<p>Css Applied</p>
-	</span>
--	<p>Css applied</p>
-</div>
-
-```
-**Extra
-a.active -> anchor tag whcih have active class
-
-Cascading style sheet and specificity
-Cascading- > Multiple rule can be apply on same element and rule with higher specificity will cascade other rule
 
 
 *******************************************
@@ -518,8 +439,55 @@ minimum-scale=0.5,					-- minimum zoom level
 user-scalebale=yes					-- user will able to change zoom
 
 ```
+*******************************************
+## Transformation
+
+* transform: rotateZ(45deg) translateX(10rem) translateY(10rem) 
+* transform-origin:center|top left| 0 0| 25% 50%|  #defines center of rotation
+* transform: skewX(20deg)|skeyY(20deg)|skew(20deg)//affects only-X|skew(20 deg 20 deg)//for both
+* transform: scale(1.5)
+* transform: perspective(1000px) rotateX(0deg) rotateY(80deg) // how far are we with the element
+* We can also set perspective in container and set rotation in element
+	*  perspective:1000px  
+	* perspective-origin:500px
+* transform-style:flat|preserve-3d
+* backface-visibility: hidden
+
+```html
+.container {
+    margin: 150px auto;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    perspective-origin: 500px;
+}
+
+.box {
+    background: red;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(30deg) rotateY(80deg) rotateZ(30deg);
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
 
 
+<body>
+    <div class="container">
+        <div class="box">
+            ANIMATE
+        </div>
+    </div>
+</body>
+
+```
+*******************************************
+##Transitioin and animation
+
+transition: opacity 200ms ease-out, transform 500ms ease-in;
+ 
 *******************************************
 ## Flebox
 
@@ -573,7 +541,7 @@ flex:0 1 auto  (0->row direction shrink basis->auto(provided height or width) )
 	* grid-template-columns: repeat(auto-fill,10rem) -> dynamically genearate columns
 	* grid-template-columns: repeat(auto-fit,10rem) -> genaerate col and align to center
 	* grid-template-rows -> create rows according to size provided		
-	* grid-template-rows:5rem minmax(10px 100px) - > create 2 rows 1 fix, another with min10px and max 100 height
+	* grid-template-rows:5rem minmax(10px 100px) - > create 2 rows 1 fix, another with min 10px and max 100 height
 	* grid-template-rows: 3.5rem auto fit-content(8rem)
 		* fit-content(8rem)  // minimum 8 rem, groe accoding to content
 	* grid-template-area: let say we have defined 4 columns and 3 rows. now we can define grid area using below in container.
@@ -586,7 +554,7 @@ flex:0 1 auto  (0->row direction shrink basis->auto(provided height or width) )
 	grid-template-rows: 5rem 2.5rem auto 	;		
 	grid-template-columns: 200px 2fr 20% 1fr;
 	grid-template-areas:"header header header header"   // all 4 column is named haeder
-						". . main main"					// 2 col is not named anything
+						". . main main"	 // 2 col is not named anything
 						"footer footer footer footer";	// all 4 column is named footer
 } 
 
@@ -663,7 +631,7 @@ grid-area:row-start / column-start / row-end / column-end
 ```
 
 
-#### element which are not part of document flow(position fixed or absolute) are not part of grid
+* element which are not part of document flow(position fixed or absolute) are not part of grid *
 
 ### Positioning:
 
@@ -679,8 +647,8 @@ align-self:stretch|center|start|end
 
 ### Responsive
 
-We can use @media (max-width 40rem) to define new grid-template-areas for mobile devices.    
-We dont need to change anything else, as side bar has new row now and element are refering to side bar and therefore they will align accordingly  
+* We can use @media (max-width 40rem) to define new grid-template-areas for mobile devices.    
+* We dont need to change anything else, as side bar has new row now and element are refering to side bar and therefore they will align accordingly  
 
 ```html
 .container {
@@ -697,6 +665,207 @@ We dont need to change anything else, as side bar has new row now and element ar
 * grid-template-columns: repeat(auto-fill,10rem) -> dynamically genearate columns, we do not need to specify the number of colums  
 * grid-template-columns: repeat(auto-fit,10rem) -> genaerate col and align to center . If we have only 2 col generated it will align it to center and if 3 comes , it will align them accordingly  
 ******************************************* 
+## SASS/SCSS
+
+* SASS ->no semicolon and curly braces but intendations
+* SCSS -> syantax is same as css
+* syntactically awesome style sheets-> compiled to normal css for production
+
+* https://sass-lang.com/install
+
+#### Nested Rules
+```
+parent{
+	some prop
+}
+parent.child{
+	some prop
+}
+----------------
+parent{
+	some prop
+	.child{
+		some prop
+	}
+}
+```
+
+#### Nested Properties
+```
+flex-direction:row;
+flex-wrap:nowrap
+------------
+flex:{
+	direction:row;
+	wrap:nowrap;
+}
+```
+#### Variables
+```
+at top:
+$main-color: #521751
+
+.child{
+	color:$main-color
+}
+```
+#### Lists and Maps
+We can save variable which has more than one variable
+```
+#List eg
+$border-def:0.05rem solid $mail-color;
+
+#map eg:
+$color:(main: #212121,secondary:345632);
+$border-def:0.05rem solid map-get($color,mail);
+
+```
+#### Builtin functions
+* map-get($color,main);
+* lighten(map-get($color,main),72%);
+* etc...
+
+#### Simple arithmatic
+```
+$size:2rem   
+child {
+	padding:$size * 2 10;
+}
+```
+
+#### Media query
+
+We do not need to add another block for media query instead we can nested rules and add @ media in the same element block
+```
+child{
+	some prop;
+	@media (min-width:40 rem){
+		some prop
+	}
+}
+
+```
+
+#### Inheritence
+```
+.saas-parent-class {
+	some common props;
+}
+
+.child-1{
+	@extend .saas-parent-class;
+	some-different-prop;
+}
+
+.child-2{
+	@extend .saas-parent-class;
+	some-different-prop;
+}
+```	
+
+#### Mixins
+Reuseable customizeable function.  
+
+```
+@mixin display-flex(){
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+}
+
+.child {
+	@include display-flex();
+	some-other-prop;
+}
+
+```
+
+
+
+*******************************************
+
+## Types of combinator:
+
+```html
+<section id='section'>
+	<h1> This is some Text</h1>
+</section>	
+
+
+#section h1{
+	some styling
+	}
+	
+```
+
+**Adjacent Sibling:
+Elements share the same Parents
+Second element come immediately after first element
+```diff
+h2 + p{
+color:red}
+
+<div>
+	<h2>not applied</h2>
+-	<p>Css applied</p>
+	<h3>not applied</h3>
+	<p>not applied</p>
+	<h2>not applied</h2>
+-	<p>Css applied</p>
+```
+**General Sibling
+Element share the same element
+second element come after first element
+```diff
+h2 ~ p{color:red}
+
+	<h2>not applied</h2>
+-	<p>Css applied</p>
+	<h3>not applied</h3>
+	<h2>not applied</h2>
+-	<p>Css applied</p>
+```
+**Child
+Second element is direct child of first element
+
+```diff
+div > p{color:red}
+
+<div>
+-	<p> Css applied</p>
+	<div>Not a applied</div>
+	<span>
+		<p>Not applied</p>
+	</span>
+-	<p>Css applied</p>
+</div>
+
+```
+**Descendant
+
+All second element will get red color
+No matter whether they are direct or indirect child
+```diff
+div  p{color:red}
+
+<div>
+-	<p> Css applied</p>
+	<div>Not a applied</div>
+	<span>
+-		<p>Css Applied</p>
+	</span>
+-	<p>Css applied</p>
+</div>
+
+```
+**Extra
+a.active -> anchor tag whcih have active class
+
+Cascading style sheet and specificity
+Cascading- > Multiple rule can be apply on same element and rule with higher specificity will cascade other rule
+*************************************
 
 Specificity in desceasing order:
 
@@ -718,7 +887,7 @@ class :psedo-class attribute
 
 ```
 
-
+*************************************
 		 
 
 Properties:
@@ -736,7 +905,7 @@ color:
 
 display:
 vertical-align:middle|top
-overflow:
+overflow:hidden         (hide the element flowing out of container)
 overflow-x: hidden
 order:
 
