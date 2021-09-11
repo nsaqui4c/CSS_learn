@@ -516,7 +516,7 @@ cross axis(flex-dirextion:row)-> column -> starts (0,0) moves to (0,y)
 flex-direction:row|column|row-reverse  
 flex-wrap:wrap|nowrap|wrap-reverse  
 flex-flow:  
-justify-content: center | flex-start |flex-end  
+justify-content: center | flex-start |flex-end  |space-between
 align-content: center  
 align-items:stretch(default)| center | flex-start |flex-end  
 ```
