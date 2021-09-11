@@ -24,6 +24,36 @@
 	* octopus
 	* Ours
 	* Subtree
+### Rebase
+
+* git rebase master  -> run from feature -> rebase the feture from latest master.
+* In master we have two  commits m1 m2, then we create feature branch and made two commit f1 f2, then we made another commit in master m3.
+	* using rebase we actually rebase the feture with m3 and then we can dimple merge the code.
+	* this will create new hashes for f1 and f2 so be carefull *
+	* Now we can Fast-forward merge it with master
+	
+
+### Cherry-pick
+
+* let say we create new feature branch more master and in branch we made several commit, but we just one commit to merge back to master not the whole branch. We can achieve this by cherry-picking. 
+* STEPS:  
+	* from feature branch -  git log -> get the commit id
+	* checkout master branch
+	* from master branch - git cherry-pick <commit-id>
+	* this will merge the commit and create new commit id in master
+
+### Tags
+* To list -> git tag
+
+* to create
+	* Light-weight tag -> temperory tag
+		* git tag "some tag" <commitId for which you want to create tag>
+	* Annotated Tag -> 
+		* git tag -a <some tag> -m "message with the tag"
+
+* once created, we can use tag to find commit or checkout commit
+	* git show <tag>
+	* git checkout <tag>
 
 
 |command										| Description   									|
@@ -79,14 +109,16 @@
 | --- 											| --- 												|
 |git merge <featureBranch>						| merge from feat to master with all commit in feat	|
 |git merge --squash <featureBranch>				| copy all changes to master,without any feat commit|
-|git merge --no-ff <feature bransch name>		| recursive merge.Check [link](#Merge-types)		|
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+|git merge --no-ff <feature bransch name>		| recursive merge.Check [Merge types](#Merge-types)	|
+|git merge --abort								| To abort merge in case of any conflict			|
+|git log --merge								| to check th emerge conflict						|
+|git rebase master								| run from feature. Check [Rebase](#Rebase)			|
+|git cherry-pick <commitId from featureBranch>	| pick 1 commit to merge rather than whole branch	|
+| --- 											| --- 												|
+|git tag <tag> <commitId>						| create lightweight tag [Tags](#Tags)				|
+|git tag -a <tag> -m <message>					| created annotated tag	[Tags](#Tags)				|
+|git tag -d <tag>								| Delete tag bt tag id								|
+| --- 											| --- 												|
 |||
 |||
 ||| 
