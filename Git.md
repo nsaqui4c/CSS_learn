@@ -56,6 +56,35 @@
 	* git checkout <tag>
 
 
+### Branches
+
+* Local Branches -> present in local
+* Remote Branches -> Present in cloud
+* Remote Tracking Branch -> copy of remote branch in local for syncing purpose.
+	* Created automatically when we connect remote branch with local branch.
+	* git fetch oeigin -> to sync the RTB with latest status of remote branch
+* Local Tracking branch ->
+	* git branch --track <remote BranchName> origin/<remote branch name>
+	* This will connect our local branch with remote tracking brnach.
+	* git push->Now running command will push changes to remote tracking branch hence to remote.
+		* this is actually - git push origin <branchName>
+	* branch -vv  -> to see connection b/w local and remote tracking branch
+* git push -u origin <branchName> -> this will create alocal tracking branch with <branchNme>, thne create remote tracking branch with same name and then create remote branch and then push the data.
+  
+### Remote 
+
+* There is no direct connection between local and remote branch. 
+	* Remote tracking branch is created in local as soon as we add remote branch
+	* All changes are done in local copy of remote tracking branch, and then to branch
+	* If we push code to remote, first remote tracking branch get synced and then remote.
+	* If we pull code to local, then remote tracking branch get synced and then local.
+	
+* git pull ->  combination of git fetch and git  merge
+	
+
+
+
+
 |command										| Description   									|
 | ---											| ---												|
 |git -init										|initialiize git									|
@@ -104,12 +133,12 @@
 |git stash clear								| delete all stashes								|
 | ---											| ---												|
 |git reflog										| give logs of all the activity in repository		|
-|git reset --hard <hashfrom reflog> 			| HEAD change back to selected hash					|
+|git reset --hard <hash from reflog> 			| HEAD change back to selected hash					|
 |git checkout <hash from reflog>				| We are in detached-mode, create branch from here	|
 | --- 											| --- 												|
 |git merge <featureBranch>						| merge from feat to master with all commit in feat	|
 |git merge --squash <featureBranch>				| copy all changes to master,without any feat commit|
-|git merge --no-ff <feature bransch name>		| recursive merge.Check [Merge types](#Merge-types)	|
+|git merge --no-ff <feature branch name>		| recursive merge.Check [Merge types](#Merge-types)	|
 |git merge --abort								| To abort merge in case of any conflict			|
 |git log --merge								| to check th emerge conflict						|
 |git rebase master								| run from feature. Check [Rebase](#Rebase)			|
@@ -119,9 +148,23 @@
 |git tag -a <tag> -m <message>					| created annotated tag	[Tags](#Tags)				|
 |git tag -d <tag>								| Delete tag bt tag id								|
 | --- 											| --- 												|
+|git remote add origin <URL>					| Add remote url									|
+|git branch -a									| Show local and remote tracking branch				|
+|git branch -r									| show remote branch which are getting tracked		|
+|git branch -vv									| list local tracking branch anf=d their remote		|
+|git ls-remote									| list all branch present in remote					|
+|git fetch origin								| fetch all branches and create remote track branch	|
+|git remote										| shows current remote URL added					|
+|git remote show origin							| show detailed configuration						|
+|git clone <url> 								| clone remote repository in local					|
+| ---											|---												|
+|git push origin --delete <branch Name> 		| Delete remote branch from cloud					|
+|git push --force origin master					| update remote even if HEAD is behind in local		|
 |||
 |||
-||| 
+|||
+|||
+|||
 
 
 
