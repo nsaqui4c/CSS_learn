@@ -5,6 +5,16 @@
 * detached head -> if we we checkout one commit, it is possible that this commit is in multiple branches, therefore in this case if we check the current branch it will show us that we are not in any branch but in detached head. Any changes sone in this branch will not be saved in any our branches, we need to create new branch to save the changes  
 
 * reflog -> store data for last 30 days. can use checkout or reset to go back to any changes
+```
+echo "# Regimen" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/nsaqui4c/Regimen.git
+git push -u origin main
+```
+
 ### gitignore
 
 *.log ->  ignore all .log file   
