@@ -147,6 +147,12 @@ viewport:
 	
 ### Display:
 defines the alignement of content
+
+The Stack Overflow answer by OldSkool for this question provides a good explanation: https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block. 
+* Basically blocks force line breaks, 
+* inline elements can have left and right margins but allow elements to sit left to right, and
+* inline-block elements are a hybrid that allow elements to sit left to right, but respect height and width of elements along with all margins.
+
 ```
 	inline-  width is limited to content. multiple element in one row, therefore cannot change margin and padding
 	
