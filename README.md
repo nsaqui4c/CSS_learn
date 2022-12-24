@@ -1,5 +1,7 @@
 # CSS_learn
 
+## normalize.css
+Normalize.css makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
 caniuse.com
 
 CSS:
@@ -9,7 +11,6 @@ World Wide Web Consortium (W3C) CSS Working Groups:
 ``` https://www.w3.org/TR/tr-groups-all#tr_Cascading_Style_Sheets__CSS__Working_Group
 ```
 
-* we can use normalize.css as boiler plate
 **********************************************
 ## 3 ways of styling
 
