@@ -1,73 +1,72 @@
-html,body{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
 }
 
 h1 {
-    margin: 0px;
+  margin: 0px;
 }
 
 #hamburger {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /*MENU FRO LARGE SCREEN*/
-.menu{
-    display:flex;  /*making two div, for logo in left and menu in right*/
-    justify-content: space-around;
-    background-color: #333333;
-    width: 100%;
-    color: beige;
+.menu {
+  display: flex; /*making two div, for logo in left and menu in right*/
+  justify-content: space-around;
+  background-color: #333333;
+  width: 100%;
+  color: beige;
 }
 
 /* creating list for right menu in horizontal*/
 .right-menu li {
-    float: left;  /* this will convert vertical to horizontal list*/
-    padding: 0px 16px;
-    text-align: center;
-  }
+  float: left; /* this will convert vertical to horizontal list*/
+  padding: 0px 16px;
+  text-align: center;
+}
 
 ul {
-    list-style-type: none;
-    margin-top: 0px;
-    padding-top: 10px;;
+  list-style-type: none;
+  margin-top: 0px;
+  padding-top: 10px;
 }
 
 li:hover {
-background-color: #111111;
-cursor: pointer;
+  background-color: #111111;
+  cursor: pointer;
 }
-
 
 /* Styling for mobile menu*/
 .mobile-menu {
-background-color: burlywood;
-width: 300px;
-max-width: 50%;color:azure;
-transition: width 0.3s ease; /* Smooth transition */
+  background-color: burlywood;
+  width: 300px;
+  max-width: 50%;
+  color: azure;
+  transition: width 0.3s ease; /* Smooth transition */
 }
 
 /*chnaging width to 30 px on click of hamburger*/
 .mobile-menu.toggled {
-width: 30px;
+  width: 30px;
 }
 
-.mobile-menu.toggled ul{
- display: none; /* Hide list when toggled */
+.mobile-menu.toggled ul {
+  display: none; /* Hide list when toggled */
 }
 
-@media screen and (max-width : 600px) {
-.menu {
-    display:none
-}
-}
-
-@media screen and (min-width : 601px) {
-.mobile-menu {
-     background-color: rgb(135, 222, 135);
-    display:none;
-}
+@media screen and (max-width: 600px) {
+  .menu {
+    display: none;
+  }
 }
 
-
+@media screen and (min-width: 601px) {
+  .mobile-menu {
+    background-color: rgb(135, 222, 135);
+    display: none;
+  }
+}
